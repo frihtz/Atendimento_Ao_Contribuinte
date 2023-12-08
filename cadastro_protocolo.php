@@ -50,19 +50,15 @@
                 $password = "guaxi";
                 $dbname = "sistema";
 
-                // Cria a conexão
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                // Checa a conexão
                 if ($conn->connect_error) {
                     die("Conexão falhou: " . $conn->connect_error);
                 }
 
-                // Query para obter contribuintes
                 $sql = "SELECT id, nome FROM contribuintes";
                 $result = $conn->query($sql);
 
-                // Exibe as opções
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         echo '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
@@ -71,7 +67,6 @@
                     echo '<option value="">Nenhum contribuinte encontrado</option>';
                 }
 
-                // Fecha a conexão
                 $conn->close();
                 ?>
             </select>

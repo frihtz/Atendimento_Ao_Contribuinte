@@ -34,21 +34,17 @@
     $password = "guaxi";
     $dbname = "sistema";
 
-    // Cria a conexão
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Checa a conexão
     if ($conn->connect_error) {
         die("Conexão falhou: " . $conn->connect_error);
     }
 
-    // Query para obter protocolos e os nomes dos contribuintes associados
     $sql = "SELECT protocolos.id as protocolo_id, protocolos.descricao, protocolos.data, protocolos.prazo, pessoas.nome as contribuinte_nome
             FROM protocolos
             JOIN pessoas ON protocolos.contribuinte_id = pessoas.id";
     $result = $conn->query($sql);
 
-    // Exibe os protocolos em tabelas
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '<div class="card mb-3">
@@ -87,7 +83,6 @@
         echo '<p>Nenhum protocolo encontrado.</p>';
     }
 
-    // Fecha a conexão
     $conn->close();
     ?>
 
