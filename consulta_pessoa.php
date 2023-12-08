@@ -7,22 +7,22 @@
     <title>Consulta de Pessoas</title>
     <style>
         body {
-            background-color: #343a40; /* Cor de fundo mais escura */
-            color: #fff; /* Cor do texto padrão */
+            background-color: #343a40;
+            color: #fff;
         }
         .container {
-            background-color: #fff; /* Cor de fundo do contêiner branco */
+            background-color: #fff;
             border-radius: 10px;
             padding: 20px;
-            margin-top: 50px; /* Espaçamento superior */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
-            color: #495057; /* Cor do texto dentro do contêiner branco */
+            margin-top: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #495057;
         }
         h2 {
-            color: #000; /* Cor do título "Consulta de Pessoas" */
+            color: #000;
         }
         .edit-form {
-            display: none; /* Esconde o formulário de edição por padrão */
+            display: none;
         }
     </style>
 </head>
@@ -32,9 +32,8 @@
     <h2 class="mb-4">Consulta de Pessoas</h2>
 
     <?php
-    include "pessoa.php";  // Inclua o arquivo com as funções relacionadas a pessoas
+    include "pessoa.php";
 
-    // Consultar as pessoas cadastradas
     $pessoas = consultarPessoas();
 
     if (!empty($pessoas)) {
@@ -85,12 +84,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
     function mostrarFormulario(id) {
-        // Esconde todos os formulários de edição
         document.querySelectorAll('.edit-form').forEach(function(form) {
             form.style.display = 'none';
         });
 
-        // Mostra o formulário de edição específico
         document.getElementById('editForm' + id).style.display = 'block';
     }
 </script>
