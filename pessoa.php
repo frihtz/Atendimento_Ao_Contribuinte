@@ -1,20 +1,10 @@
 <?php
-   include "conexao.php"
+   include "conexao.php";
 
    function cadastrarPessoa($nome, $dataNascimento, $cpf, $sexo, $cidade, $bairro, $rua, $numero, $complemento) {
        global $conn;
        $sql = "INSERT INTO pessoa (nome, data_nascimento, cpf, sexo, cidade, bairro, rua, numero, complemento) 
                VALUES ('$nome', '$dataNascimento', '$cpf', '$sexo', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
-   
-       return $conn->query($sql);
-   }
-   
-   function alterarPessoa($id, $nome, $dataNascimento, $cpf, $sexo, $cidade, $bairro, $rua, $numero, $complemento) {
-       global $conn;
-       $sql = "UPDATE pessoa 
-               SET nome='$nome', data_nascimento='$dataNascimento', cpf='$cpf', sexo='$sexo', 
-                   cidade='$cidade', bairro='$bairro', rua='$rua', numero='$numero', complemento='$complemento' 
-               WHERE id=$id";
    
        return $conn->query($sql);
    }
@@ -37,4 +27,5 @@
        }
    
        return $pessoas;
+    }
 ?>

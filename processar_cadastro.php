@@ -11,6 +11,8 @@
         $rua = $_POST["rua"];
         $numero = $_POST["numero"];
         $complemento = $_POST["complemento"];
+
+        $cpfNumerico = preg_replace('/[^0-9]/', '', $cpf);
     
         $resultado = cadastrarPessoa($nome, $dataNascimento, $cpf, $sexo, $cidade, $bairro, $rua, $numero, $complemento);
     

@@ -47,10 +47,8 @@
                         <p class="card-text">Sexo: ' . $pessoa['sexo'] . '</p>
                         <p class="card-text">Cidade: ' . $pessoa['cidade'] . '</p>
                         
-                        <!-- Botão de Editar -->
                         <button class="btn btn-primary" onclick="mostrarFormulario(' . $pessoa['id'] . ')">Editar</button>
                         
-                        <!-- Formulário de Edição -->
                         <form class="edit-form" id="editForm' . $pessoa['id'] . '" action="editar_pessoa.php" method="post">
                             <input type="hidden" name="id" value="' . $pessoa['id'] . '">
                             <div class="form-group">
@@ -65,7 +63,6 @@
                                 <label for="editCpf">Novo CPF:</label>
                                 <input type="text" class="form-control" id="editCpf" name="editCpf" required>
                             </div>
-                            <!-- Adicione mais campos conforme necessário -->
                             <button type="submit" class="btn btn-success">Salvar</button>
                         </form>
                         
