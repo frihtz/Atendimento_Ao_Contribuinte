@@ -55,10 +55,8 @@
                         <p class="card-text">Prazo: ' . $row['prazo'] . ' dias</p>
                         <p class="card-text">Contribuinte: ' . $row['contribuinte_nome'] . '</p>
                         
-                        <!-- Botão de Editar -->
                         <button class="btn btn-primary" onclick="mostrarFormulario(' . $row['protocolo_id'] . ')">Editar</button>
                         
-                        <!-- Formulário de Edição -->
                         <form class="edit-form" id="editForm' . $row['protocolo_id'] . '" action="editar_protocolo.php" method="post">
                             <input type="hidden" name="protocolo_id" value="' . $row['protocolo_id'] . '">
                             <div class="form-group">
@@ -73,7 +71,6 @@
                                 <label for="editPrazo">Novo Prazo (em dias):</label>
                                 <input type="number" class="form-control" id="editPrazo" name="editPrazo" required>
                             </div>
-                            <!-- Adicione mais campos conforme necessário -->
                             <button type="submit" class="btn btn-success">Salvar</button>
                         </form>
                     </div>
